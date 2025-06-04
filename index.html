@@ -15,8 +15,44 @@
       <h1>Picture This!</h1>
       <h4>My Really Cool Blog Post</h4>
     </div>
-    <img src="images/museum.jpg" alt="placeholder">
 
+    <div class="image-container">
+      <picture class="responsive-image">
+
+         <!-- Square images (viewport ≥ 960px) -->
+        <source media="(min-width: 960px)"
+                srcset="images/square-480.jpg 480w,
+                        images/square-960.jpg 960w,
+                        images/square-1440.jpg 1440w,
+                        images/square-2400.jpg 2400w"
+                sizes="(min-width: 1600px) 800px,
+                       (min-width: 1280px) 640px,
+                       480px"
+                type="image/jpeg">
+
+
+         <!-- Landscape images (viewport < 960px) -->
+        <source media="(max-width: 959px)"
+                srcset="images/landscape-320.jpg 320w,
+                        images/landscape-480.jpg 480w,
+                        images/landscape-640.jpg 640w,
+                        images/landscape-720.jpg 720w,
+                        images/landscape-960.jpg 960w,
+                        images/landscape-1440.jpg 1440w,
+                        images/landscape-1920.jpg 1920w,
+                        images/landscape-2160.jpg 2160w,
+                        images/landscape-2880.jpg 2880w"
+                sizes="(max-width: 320px) 320px, 
+                       (max-width: 480px) 480px, 
+                       (max-width: 720px) 720px,
+                       960px"
+                type="image/jpeg">
+
+        <!-- Fallback image -->
+        <img src="images/landscape-960.jpg" alt="Museum image">
+       
+      </picture>
+    </div>
   </header>
 </body>
 
